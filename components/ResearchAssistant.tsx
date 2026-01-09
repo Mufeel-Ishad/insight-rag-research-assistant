@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { DocumentSource, ChatMessage } from '@/types';
 import { extractTextFromPdf, chunkText } from '@/lib/pdfProcessor';
-import { generateRAGResponse, retrieveRelevantContext } from '@/lib/geminiService';
+import { generateRAGResponse, retrieveRelevantContext } from '@/lib/groqService';
 import Sidebar from './Sidebar';
 import ChatHeader from './ChatHeader';
 import ChatMessages from './ChatMessages';
@@ -108,7 +108,7 @@ export default function ResearchAssistant() {
       } else if (err?.status === 'RESOURCE_EXHAUSTED' || err?.code === 429) {
         errorMessage = "⚠️ Rate limit exceeded. The free tier has daily limits. Please wait a moment and try again, or check your API usage at https://ai.google.dev/";
       } else if (err?.message?.includes('API key')) {
-        errorMessage = "❌ API key error. Please check your NEXT_PUBLIC_GEMINI_API_KEY in .env.local file.";
+        errorMessage = "❌ API key error. Please check your NEXT_PUBLIC_GROQ_API_KEY in .env.local file.";
       } else if (err?.message?.includes('quota')) {
         errorMessage = "⚠️ Quota exceeded. The free tier has usage limits. Please wait before trying again or check your usage at https://ai.google.dev/";
       }

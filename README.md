@@ -4,7 +4,7 @@
 
 # Insight-RAG Research Assistant
 
-AI-powered research assistant using RAG (Retrieval Augmented Generation) built with Next.js and Gemini AI.
+AI-powered research assistant using RAG (Retrieval Augmented Generation) built with Next.js and Groq AI.
 
 ## Features
 
@@ -33,7 +33,7 @@ insight-rag-research-assistant/
 │   ├── ThinkingIndicator.tsx  # Loading indicator
 │   └── icons.tsx          # Icon components
 ├── lib/                   # Utility functions and services
-│   ├── geminiService.ts   # Gemini API integration
+│   ├── geminiService.ts   # Groq AI integration 
 │   └── pdfProcessor.ts    # PDF processing utilities
 └── types/                 # TypeScript type definitions
     └── index.ts           # Shared types
@@ -43,7 +43,7 @@ insight-rag-research-assistant/
 
 - Node.js 18+ 
 - npm or yarn
-- Gemini API Key from [Google AI Studio](https://aistudio.google.com/app/apikey)
+- Groq API Key 
 
 ## Getting Started
 
@@ -59,9 +59,9 @@ insight-rag-research-assistant/
    cp .env.example .env.local
    ```
    
-   Then edit `.env.local` and add your Gemini API key:
+   Then edit `.env.local` and add your Groq API key:
    ```
-   NEXT_PUBLIC_GEMINI_API_KEY=your_api_key_here
+   NEXT_PUBLIC_GROQ_API_KEY=your_api_key_here
    ```
 
 3. **Run the development server:**
@@ -85,7 +85,7 @@ npm start
 1. **Upload PDFs**: Users can upload multiple PDF documents through the sidebar
 2. **Processing**: PDFs are processed client-side, extracting text and chunking it for efficient retrieval
 3. **RAG Query**: When a question is asked, relevant chunks are retrieved using semantic matching
-4. **AI Response**: The retrieved context is sent to Gemini AI along with the question to generate accurate, context-aware responses
+4. **AI Response**: The retrieved context is sent to Groq AI along with the question to generate accurate, context-aware responses
 
 ## Technologies Used
 
@@ -93,16 +93,19 @@ npm start
 - **React 19** - UI library
 - **TypeScript** - Type safety
 - **Tailwind CSS** - Styling
-- **Gemini AI 1.5 Flash/Pro** - Language model (Free tier models)
+- **Groq AI (Llama 3.3 70B)** - Language model (Fast inference, free tier available)
 - **PDF.js** - PDF processing
 - **Marked** - Markdown parsing
 
-## Notes on Free Tier
+## Notes on Groq AI
 
-This application uses **Gemini 1.5 Flash** as the primary model and **Gemini 1.5 Pro** as a fallback - both are available on the free tier. These models have usage limits:
-- Daily request limits apply
-- Rate limits per minute may apply
+This application uses **Llama 3.3 70B Versatile** as the primary model and **Llama 3.1 8B Instant** as a fallback. Groq provides:
+- **Ultra-fast inference** - Optimized for speed
+- **Free tier available** - Generous free usage limits
+- **Rate limits** - May apply based on your plan
 - If you exceed limits, you'll see helpful error messages with retry information
+
+Get your API key at [Groq Console](https://console.groq.com/)
 
 ## License
 
