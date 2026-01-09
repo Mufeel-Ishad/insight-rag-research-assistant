@@ -3,14 +3,21 @@
 @tailwind utilities;
 
 :root {
-  --background: #020617;
-  --foreground: #f8fafc;
+  --background: #0a0a0a; /* near-black */
+  --foreground: #f5f5f5; /* neutral-100 */
+  --heading-color: #fafafa; /* h1/topic */
+  --subheading-color: #22d3ee; /* cyan-400 for h2/h3 */
+  --tertiary-heading-color: #d4d4d4; /* neutral-300 for h4 */
+  --quaternary-heading-color: #a3a3a3; /* neutral-400 for h5/h6 */
+  --bold-color: #f59e0b; /* amber-500 for emphasis */
 }
 
 body {
   background-color: var(--background);
   color: var(--foreground);
   font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Custom Scrollbar */
@@ -23,23 +30,42 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #334155;
+  background: #262626; /* neutral-800 */
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #475569;
+  background: #404040; /* neutral-700 */
 }
 
 /* Custom prose overrides for better research reading */
-.prose h1, .prose h2, .prose h3 {
-  color: #f1f5f9 !important;
+.prose h1 {
+  color: var(--heading-color) !important;
   margin-top: 1.5em !important;
   margin-bottom: 0.5em !important;
 }
+.prose h2, .prose h3 {
+  color: var(--subheading-color) !important;
+  margin-top: 1.25em !important;
+  margin-bottom: 0.5em !important;
+}
+.prose h4 {
+  color: var(--tertiary-heading-color) !important;
+  margin-top: 1em !important;
+  margin-bottom: 0.5em !important;
+}
+.prose h5, .prose h6 {
+  color: var(--quaternary-heading-color) !important;
+  margin-top: 0.85em !important;
+  margin-bottom: 0.4em !important;
+}
 
-.prose strong {
-  color: #818cf8 !important;
+/* Emphasis color for bold text in body content (not headings) */
+.prose p strong,
+.prose li strong,
+.prose td strong,
+.prose blockquote strong {
+  color: var(--bold-color) !important;
   font-weight: 700 !important;
 }
 
@@ -54,5 +80,40 @@ body {
 
 .prose li {
   margin-bottom: 0.25em !important;
+}
+
+/* Selection and interactive states */
+::selection {
+  background: rgba(255, 255, 255, 0.08);
+  color: #f5f5f5;
+}
+
+/* Links and subtle text */
+a {
+  color: #e5e5e5; /* neutral-200 */
+}
+a:hover {
+  color: #fafafa; /* neutral-50 */
+  text-decoration: underline;
+}
+
+/* Inputs and placeholders */
+::placeholder {
+  color: #94a3b8; /* slate-400 */
+}
+
+/* Code blocks inside markdown */
+.prose pre {
+  background-color: #0f0f10 !important; /* deep neutral */
+  border: 1px solid #262626 !important; /* neutral-800 */
+  border-radius: 0.75rem !important;
+  padding: 1rem !important;
+}
+.prose code {
+  color: #e5e7eb !important; /* neutral-200 */
+}
+.prose code::before,
+.prose code::after {
+  content: none !important;
 }
 

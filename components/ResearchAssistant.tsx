@@ -129,7 +129,7 @@ export default function ResearchAssistant() {
   };
 
   return (
-    <div className="flex h-screen bg-slate-950 text-slate-100 overflow-hidden">
+    <div className="flex h-screen bg-black text-neutral-100 overflow-hidden">
       <Sidebar 
         docs={docs}
         isProcessing={isProcessing}
@@ -137,8 +137,8 @@ export default function ResearchAssistant() {
         onRemoveDoc={removeDoc}
       />
 
-      <main className="flex-1 flex flex-col relative bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-slate-900 via-slate-950 to-slate-950">
-        <ChatHeader />
+      <main className="flex-1 flex flex-col relative bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-black via-neutral-950 to-black">
+        {/* <ChatHeader /> */}
 
         <ChatMessages 
           messages={messages}

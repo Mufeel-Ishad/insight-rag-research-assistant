@@ -18,7 +18,7 @@ export default function Message({ message }: MessageProps) {
     
     return (
       <div 
-        className="prose prose-invert prose-sm max-w-none prose-indigo"
+        className="prose prose-invert prose-sm max-w-none"
         dangerouslySetInnerHTML={{ __html: htmlContent }}
       />
     );
@@ -28,8 +28,8 @@ export default function Message({ message }: MessageProps) {
     <div className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}>
       <div className={`max-w-[90%] md:max-w-[85%] rounded-2xl px-6 py-4 ${
         message.role === 'user' 
-          ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-900/20' 
-          : 'bg-slate-900 border border-slate-800 text-slate-200'
+          ? 'bg-neutral-800 text-white shadow-lg shadow-black/30' 
+          : 'bg-neutral-950 border border-neutral-800 text-neutral-200'
       }`}>
         {renderMessageContent()}
       </div>
