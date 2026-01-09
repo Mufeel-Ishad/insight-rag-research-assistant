@@ -33,7 +33,7 @@ insight-rag-research-assistant/
 │   ├── ThinkingIndicator.tsx  # Loading indicator
 │   └── icons.tsx          # Icon components
 ├── lib/                   # Utility functions and services
-│   ├── geminiService.ts   # Groq AI integration 
+│   ├── groqService.ts   # Groq AI integration 
 │   └── pdfProcessor.ts    # PDF processing utilities
 └── types/                 # TypeScript type definitions
     └── index.ts           # Shared types
