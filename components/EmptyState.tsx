@@ -7,8 +7,8 @@ interface EmptyStateProps {
 export default function EmptyState({ onSuggestionClick }: EmptyStateProps) {
   return (
     <div className="flex flex-col items-center justify-center pt-20 text-center">
-      <div className="w-20 h-20 bg-neutral-800/40 rounded-3xl flex items-center justify-center mb-6 text-neutral-400 border border-neutral-700/40">
-        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <div className="w-20 h-20 bg-neutral-800/40 rounded-3xl flex items-center justify-center mb-6 text-neutral-400 border border-cyan-300">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <path d="M12 8V4H8"/>
           <rect width="16" height="12" x="4" y="8" rx="2"/>
           <path d="M2 14h2"/>

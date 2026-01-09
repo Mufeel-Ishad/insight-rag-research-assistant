@@ -22,7 +22,7 @@ export default function Sidebar({ docs, isProcessing, onFileUpload, onRemoveDoc 
   return (
     <aside className="w-80 border-r border-neutral-900 flex flex-col bg-black/50 backdrop-blur-xl">
       <div className="p-6">
-        <h1 className="text-xl font-bold from-slate-400 to-slate-900 bg-gradient-to-r bg-clip-text text-transparent">Insight-RAG</h1>
+        <h1 className="text-xl font-bold from-cyan-500 to-slate-900 bg-gradient-to-r bg-clip-text text-transparent">Insight-RAG</h1>
         <p className="text-xs text-neutral-500 mt-1 uppercase tracking-widest font-semibold">Research Assistant</p>
       </div>
 
