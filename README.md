@@ -1,0 +1,109 @@
+<div align="center">
+<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+</div>
+
+# Insight-RAG Research Assistant
+
+AI-powered research assistant using RAG (Retrieval Augmented Generation) built with Next.js and Gemini AI.
+
+## Features
+
+- 📄 Upload and process PDF documents
+- 🔍 Intelligent document chunking and retrieval
+- 💬 Interactive chat interface with context-aware responses
+- 🎨 Modern, responsive UI with Tailwind CSS
+- ⚡ Built with Next.js 15 and React 19
+
+## Project Structure
+
+```
+insight-rag-research-assistant/
+├── app/                    # Next.js App Router
+│   ├── layout.tsx         # Root layout
+│   ├── page.tsx           # Home page
+│   └── globals.css        # Global styles
+├── components/            # React components
+│   ├── ResearchAssistant.tsx  # Main component
+│   ├── Sidebar.tsx        # Document sidebar
+│   ├── ChatMessages.tsx   # Chat messages container
+│   ├── Message.tsx        # Individual message
+│   ├── ChatInput.tsx      # Input form
+│   ├── ChatHeader.tsx     # Chat header
+│   ├── EmptyState.tsx     # Empty state
+│   ├── ThinkingIndicator.tsx  # Loading indicator
+│   └── icons.tsx          # Icon components
+├── lib/                   # Utility functions and services
+│   ├── geminiService.ts   # Gemini API integration
+│   └── pdfProcessor.ts    # PDF processing utilities
+└── types/                 # TypeScript type definitions
+    └── index.ts           # Shared types
+```
+
+## Prerequisites
+
+- Node.js 18+ 
+- npm or yarn
+- Gemini API Key from [Google AI Studio](https://aistudio.google.com/app/apikey)
+
+## Getting Started
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+2. **Set up environment variables:**
+   
+   Copy `.env.example` to `.env.local`:
+   ```bash
+   cp .env.example .env.local
+   ```
+   
+   Then edit `.env.local` and add your Gemini API key:
+   ```
+   NEXT_PUBLIC_GEMINI_API_KEY=your_api_key_here
+   ```
+
+3. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser:**
+   
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+## Build for Production
+
+```bash
+npm run build
+npm start
+```
+
+## How It Works
+
+1. **Upload PDFs**: Users can upload multiple PDF documents through the sidebar
+2. **Processing**: PDFs are processed client-side, extracting text and chunking it for efficient retrieval
+3. **RAG Query**: When a question is asked, relevant chunks are retrieved using semantic matching
+4. **AI Response**: The retrieved context is sent to Gemini AI along with the question to generate accurate, context-aware responses
+
+## Technologies Used
+
+- **Next.js 15** - React framework with App Router
+- **React 19** - UI library
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Styling
+- **Gemini AI 1.5 Flash/Pro** - Language model (Free tier models)
+- **PDF.js** - PDF processing
+- **Marked** - Markdown parsing
+
+## Notes on Free Tier
+
+This application uses **Gemini 1.5 Flash** as the primary model and **Gemini 1.5 Pro** as a fallback - both are available on the free tier. These models have usage limits:
+- Daily request limits apply
+- Rate limits per minute may apply
+- If you exceed limits, you'll see helpful error messages with retry information
+
+## License
+
+MIT
